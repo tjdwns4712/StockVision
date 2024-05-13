@@ -4,27 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Stock Prediction</title>
+    <link rel="stylesheet" href="/css/stockStyles.css">
 </head>
 <body>
-        <form action="/stock" method="post">
-            <h1>Stock Prediction Result</h1>
-            <p>Stock Name: <span th:text="${stockName}"></span></p>
-            <p>Stock Ticker: <span th:text="${stockCode}"></span></p>
+    <div class="container">
+        <form class="formclass" action="/stock" method="post">
 
+            <div class="notbuttonclass">
+
+            <p class="text2">Stock Name: <span th:text="${stockName}"></span></p>
+            <p class="text2">Stock Ticker: <span th:text="${stockCode}"></span></p>
 
             <!-- 이미지 데이터가 있을 경우 표시 -->
-            <h1>Stock Prediction Image</h1>
-            <div>
-                <img th:src="${imageData}" alt="Stock Prediction" />
+            <div class="text1">Stock Prediction Image</div>
+            <div class="stockimage">
+                <img th:src="${imageData}" alt="Stock Prediction" width="800" height="550" />
             </div>
 
             <!-- 오류 메시지가 있을 경우 표시 -->
             <div th:if="${error}">
                 <p>Error: [[${error}]]</p>
             </div>
-            <button type="submit">차트 조회</button>
 
+            </div>
+
+            <div class="buttondiv">
+                <button class="buttonclass" type="submit">Let's get chart</button>
+            </div>
+        </form>
+
+        <form action="/stock_ai" method="post">
 
         </form>
+    </div>
 </body>
+<script type="text/javascript" src="/js/stockScripts.js"></script>
 </html>
