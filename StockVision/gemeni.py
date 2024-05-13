@@ -6,7 +6,7 @@ from io import BytesIO
 app = Flask(__name__)
 
 # API 키 설정
-API_KEY = "AIzaSyD5f5KJnQwR-YLxBMFYyxTOI3aIWS6S3ro"
+API_KEY = ""
 
 # 생성 모델 초기화
 genai.configure(api_key=API_KEY)
